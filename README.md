@@ -43,12 +43,13 @@ A Spring Boot application that automates the calculation of collateral values fo
    ```bash
    git clone https://github.com/Apoorva3344/Collateral-Springboot-Coding-Assignment.git
    cd Collateral-Springboot-Coding-Assignment
+   
 Build
 mvn clean package
 
 Run
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
-The service will start on http://localhost:8081.
+The service will start on http://localhost:8084.
 
 API Endpoints
 1. Mock External Services
