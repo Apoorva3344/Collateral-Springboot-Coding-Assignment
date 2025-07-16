@@ -52,67 +52,35 @@ mvn spring-boot:run -Dspring-boot.run.profiles=dev
 The service will start on http://localhost:8084.
 
 API Endpoints
-1. Mock External Services
-These three endpoints return static sample data for local testing.
 
-Positions
+Mock External Services
+
 POST /api/mock/positions
-Body:
+Request body: ["E1","E2"]
+Returns account holdings.
 
-["E1","E2"]
-Response:
-
-[
-  { "accountId":"E1", "positions":[{"assetId":"S1","quantity":100},…] },
-  { "accountId":"E2", "positions":[{"assetId":"S1","quantity":200},…] }
-]
-Eligibility
 POST /api/mock/eligibility
-Body:
-
+Request body:
 {
   "accountIds":["E1","E2"],
   "assetIds":["S1","S2","S3","S4","S5"]
 }
-Response:
-[
-  { "eligible":true,  "assetIDs":["S1","S2","S3"], "accountIDs":["E1","E2"], "discount":0.9 },
-  { "eligible":false, "assetIDs":["S4","S5"],         "accountIDs":["E1","E2"], "discount":0.0 }
-]
-Prices
+Returns eligibility rules.
+
 POST /api/mock/prices
-Body:
+Request body: ["S1","S2","S3","S4","S5"]
+Returns asset prices.
 
-["S1","S2","S3","S4","S5"]
-Response:
-
-[
-  { "assetId":"S1","price":50.5 },
-  { "assetId":"S2","price":20.2 },
-  { "assetId":"S3","price":10.4 },
-  { "assetId":"S4","price":15.5 },
-  { "assetId":"S5","price":25.0 }
-]
-
-2. Main Collateral API
-Calculate Collateral
+Collateral Calculation
 POST /api/collateral/calculate
-Body:
-
-["E1","E2"]
-Success (200 OK):
-
+Request body: ["E1","E2"]
+Response:
 [
-  { "accountId":"E1", "collateralValue":5481.00 },
-  { "accountId":"E2", "collateralValue":11817.00 }
+  { "accountId": "E1", "collateralValue": 5481.00 },
+  { "accountId": "E2", "collateralValue": 11817.00 }
 ]
-Error Cases:
+GET /api/collateral/health → "Collateral Service is running"
 
-[] or null → 400 Bad Request
-
-Health Check
-GET /api/collateral/health
-Response: Collateral Service is running
 
 Testing
 mvn clean test
