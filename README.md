@@ -71,7 +71,6 @@ POST /api/mock/prices
 Request body: ["S1","S2","S3","S4","S5"]
 Returns asset prices.
 
-Collateral Calculation
 POST /api/collateral/calculate
 Request body: ["E1","E2"]
 Response:
@@ -79,6 +78,7 @@ Response:
   { "accountId": "E1", "collateralValue": 5481.00 },
   { "accountId": "E2", "collateralValue": 11817.00 }
 ]
+
 GET /api/collateral/health → "Collateral Service is running"
 
 
