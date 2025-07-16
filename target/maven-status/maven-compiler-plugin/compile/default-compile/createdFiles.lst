@@ -1,0 +1,16 @@
+com\example\collateral\demo\CollateralDemo.class
+com\example\collateral\model\CollateralResult.class
+com\example\collateral\controller\CollateralController.class
+com\example\collateral\mock\MockExternalServicesControllers$EligibilityRequest.class
+com\example\collateral\CollateralApplication.class
+com\example\collateral\model\AssetPrice.class
+com\example\collateral\model\AccountPosition.class
+com\example\collateral\model\EligibilityData.class
+com\example\collateral\client\PositionServiceClient.class
+com\example\collateral\client\PriceServiceClient.class
+com\example\collateral\client\EligibilityServiceClient.class
+com\example\collateral\config\AppConfig.class
+com\example\collateral\model\Position.class
+com\example\collateral\service\CollateralCalculationService.class
+com\example\collateral\mock\MockExternalServicesControllers.class
+com\example\collateral\service\CollateralCalculationService$EligibilityInfo.class
