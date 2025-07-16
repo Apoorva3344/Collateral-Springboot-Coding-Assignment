@@ -93,6 +93,7 @@ Response:
   { "assetId":"S4","price":15.5 },
   { "assetId":"S5","price":25.0 }
 ]
+
 2. Main Collateral API
 Calculate Collateral
 POST /api/collateral/calculate
@@ -114,10 +115,8 @@ GET /api/collateral/health
 Response: Collateral Service is running
 
 Testing
-Automated
-Command line
-
 mvn clean test
+
 Service tests cover normal, all-ineligible, missing-price scenarios.
 
 Controller tests verify HTTP status codes and JSON payloads.
@@ -132,10 +131,7 @@ Troubleshooting:
 If you see Byte-Buddy errors on Java versions >17, either switch to Java 17 or add
 -Dnet.bytebuddy.experimental=true to your test JVM args.
 
-Postman Collection
-Import this repo’s Collateral-Service.postman_collection.json
-
-Set {{baseUrl}} = http://localhost:8081 in your environment
+Postman Testing:
 
 Execute requests in order:
 
@@ -147,9 +143,3 @@ Mock /prices
 
 /calculate
 
-Contributing
-Fork the repo
-
-Create a feature branch
-
-Submit a pull request
