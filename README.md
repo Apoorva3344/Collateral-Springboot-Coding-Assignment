@@ -51,7 +51,7 @@ Run
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
 The service will start on http://localhost:8084.
 
-API Endpoints
+## API Endpoints
 
 Mock External Services
 
