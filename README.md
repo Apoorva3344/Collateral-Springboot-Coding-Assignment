@@ -80,7 +80,7 @@ Response:
 ]
 
 GET /api/collateral/health → "Collateral Service is running"
-
+---
 
 ## Testing
 mvn clean test
@@ -88,17 +88,17 @@ mvn clean test
 Service tests cover normal, all-ineligible, missing-price scenarios.
 
 Controller tests verify HTTP status codes and JSON payloads.
-
+---
 ## In Eclipse
 
 Right-click project → Run As → Maven test
 
 Or run individual JUnit classes under src/test/java
-
+---
 ## Troubleshooting:
 If you see Byte-Buddy errors on Java versions >17, either switch to Java 17 or add
 -Dnet.bytebuddy.experimental=true to your test JVM args.
-
+---
 ## Postman Testing:
 
 Execute requests in order:
@@ -110,4 +110,4 @@ Mock /eligibility
 Mock /prices
 
 /calculate
-
+---
